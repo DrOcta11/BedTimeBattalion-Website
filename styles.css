@@ -13,7 +13,10 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(216,195,141,.08), transparent 22%),
+    radial-gradient(circle at 86% 72%, rgba(53,73,88,.18), transparent 27%),
+    linear-gradient(135deg, #070808 0%, #101413 48%, #080909 100%);
   color: var(--text);
   font-family: 'Rajdhani', sans-serif;
   font-size: 18px;
@@ -24,7 +27,12 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 70% 15%, rgba(216,195,141,.07), transparent 28%), linear-gradient(120deg, transparent 30%, rgba(255,255,255,.015) 50%, transparent 70%);
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+    radial-gradient(circle at 70% 15%, rgba(216,195,141,.09), transparent 28%);
+  background-size: 72px 72px, 72px 72px, auto;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 80%);
   z-index: -1;
 }
 a { color: inherit; text-decoration: none; }
@@ -43,7 +51,8 @@ a { color: inherit; text-decoration: none; }
   z-index: 20;
 }
 .brand { display:flex; align-items:center; gap:14px; font-weight:700; letter-spacing:.08em; }
-.brand-mark { border:1px solid var(--gold); color:var(--gold-bright); padding:6px 9px; font-size:15px; }
+.brand-mark { border:1px solid var(--gold); color:var(--gold-bright); padding:6px 9px; font-size:15px; display:inline-flex; align-items:center; gap:7px; }
+.brand-mark img { width:24px; height:24px; object-fit:contain; }
 .brand-text { font-size:20px; }
 nav { display:flex; gap:32px; }
 nav a { color:var(--muted); font-weight:600; text-transform:uppercase; font-size:15px; letter-spacing:.1em; transition:.2s; }
@@ -86,6 +95,7 @@ h1 span { color:var(--gold-bright); font-size:.52em; letter-spacing:.08em; }
   position:relative;
   box-shadow:inset 0 0 80px rgba(216,195,141,.025), 0 0 100px rgba(0,0,0,.6);
 }
+.hero-logo { width:112px; height:112px; object-fit:contain; margin-bottom:8px; filter:drop-shadow(0 0 18px rgba(216,195,141,.18)); }
 .hero-card::before, .hero-card::after { content:''; position:absolute; border:1px solid rgba(216,195,141,.08); border-radius:50%; }
 .hero-card::before { inset:16px; }
 .hero-card::after { inset:-18px; }
