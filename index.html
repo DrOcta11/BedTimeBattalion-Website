@@ -11,21 +11,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise"></div>
-
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="BedTimeBattalion Startseite">
-      <span class="brand-mark">BTB</span>
-      <span class="brand-text">BedTimeBattalion</span>
-    </a>
-    <nav>
-      <a href="#about">Über uns</a>
-      <a href="#discord">Discord</a>
-      <a href="#voice-live">Voice Live</a>
-      <a href="#rules">Clan</a>
-    </nav>
+    <a class="brand" href="#home"><span class="brand-mark">BTB</span><span class="brand-text">BedTimeBattalion</span></a>
+    <nav><a href="#about">Über uns</a><a href="#discord">Discord</a><a href="#rules">Clan</a></nav>
   </header>
-
   <main>
     <section class="hero" id="home">
       <div class="hero-glow"></div>
@@ -34,105 +23,34 @@
         <h1><span>[BTB]</span><br>BedTimeBattalion</h1>
         <p class="hero-copy">Wenn die Kinder schlafen, beginnt unsere Schicht.</p>
         <p class="hero-subcopy">Ein Wardogs-Clan für Eltern, Feierabend-Gamer und alle, die abends gemeinsam entspannt und trotzdem organisiert zocken wollen.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord beitreten</a>
-          <a class="button secondary" href="#voice-live">Wer ist im Voice?</a>
-        </div>
+        <div class="hero-actions"><a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord beitreten</a><a class="button secondary" href="#about">Mehr erfahren</a></div>
       </div>
-
-      <div class="hero-card">
-        <div class="moon">☾</div>
-        <div class="stars">★ ★ ★</div>
-        <strong>BEDTIME</strong>
-        <span>BATTALION</span>
-        <small>EST. NIGHT SHIFT</small>
-      </div>
+      <div class="hero-card"><div class="moon">☾</div><div class="stars">★ ★ ★</div><strong>BEDTIME</strong><span>BATTALION</span><small>EST. NIGHT SHIFT</small></div>
     </section>
-
     <section class="section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">WER WIR SIND</p>
-        <h2>Gaming beginnt nach dem Gute-Nacht-Kuss.</h2>
-      </div>
+      <div class="section-heading"><p class="eyebrow">WER WIR SIND</p><h2>Gaming beginnt nach dem Gute-Nacht-Kuss.</h2></div>
       <div class="grid cards">
-        <article class="card">
-          <span class="card-number">01</span>
-          <h3>Elternfreundlich</h3>
-          <p>Bei uns versteht jeder, wenn das echte Leben zuerst kommt. Kinder, Familie und Alltag haben Vorrang.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">02</span>
-          <h3>Abends aktiv</h3>
-          <p>Unsere Hauptzeit ist am Abend. Genau dann, wenn zu Hause langsam Ruhe einkehrt.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">03</span>
-          <h3>Gemeinsam statt alleine</h3>
-          <p>Squads, Sprachchat, Taktik und lockere Runden – wir spielen zusammen und helfen einander.</p>
-        </article>
+        <article class="card"><span class="card-number">01</span><h3>Elternfreundlich</h3><p>Bei uns versteht jeder, wenn das echte Leben zuerst kommt. Kinder, Familie und Alltag haben Vorrang.</p></article>
+        <article class="card"><span class="card-number">02</span><h3>Abends aktiv</h3><p>Unsere Hauptzeit ist am Abend. Genau dann, wenn zu Hause langsam Ruhe einkehrt.</p></article>
+        <article class="card"><span class="card-number">03</span><h3>Gemeinsam statt alleine</h3><p>Squads, Sprachchat, Taktik und lockere Runden – wir spielen zusammen und helfen einander.</p></article>
       </div>
     </section>
-
-    <section class="section voice-section" id="voice-live">
-      <div class="section-heading voice-heading">
-        <div>
-          <p class="eyebrow">VOICE LIVE</p>
-          <h2>Wer zockt gerade?</h2>
-        </div>
-        <div class="live-badge"><span></span> LIVE</div>
-      </div>
-      <p class="voice-intro">Hier siehst du automatisch die belegten Sprachkanäle unseres Discord-Servers und die Mitglieder, die gerade darin sind.</p>
-      <div id="voice-status" class="voice-status" aria-live="polite">
-        <div class="voice-loading">Discord wird geladen …</div>
-      </div>
-      <div class="voice-footer">
-        <span id="voice-updated">Live-Daten werden abgerufen</span>
-        <a href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Auf Discord dazukommen →</a>
-      </div>
-    </section>
-
     <section class="section discord-section" id="discord">
       <div class="discord-copy">
-        <p class="eyebrow">UNSER DISCORD</p>
-        <h2>Direkt in die Community.</h2>
-        <p>Das offizielle Discord-Widget zeigt dir unseren Server, Online-Mitglieder und verfügbare öffentliche Sprachkanäle.</p>
+        <p class="eyebrow">UNSER DISCORD</p><h2>Direkt in die Community.</h2>
+        <p>Hier ist das offizielle Discord-Widget unseres BedTimeBattalion-Servers eingebettet.</p>
         <a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Jetzt zu BTB</a>
-        <p class="widget-note">Damit die Live-Anzeige funktioniert, muss in Discord unter <strong>Servereinstellungen → Widget</strong> das Server-Widget aktiviert sein.</p>
       </div>
       <div class="discord-widget-wrap">
-        <iframe
-          src="https://discord.com/widget?id=1546613563215585320&theme=dark"
-          width="350"
-          height="500"
-          allowtransparency="true"
-          frameborder="0"
-          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-          title="BedTimeBattalion Discord Server">
-        </iframe>
+        <iframe src="https://discord.com/widget?id=1546613563215585320&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       </div>
     </section>
-
     <section class="section" id="rules">
-      <div class="section-heading">
-        <p class="eyebrow">UNSER CLAN</p>
-        <h2>Ein Tag. Eine Einheit.</h2>
-      </div>
-      <div class="clan-panel">
-        <div>
-          <span class="clan-tag">[BTB]</span>
-          <h3>BedTimeBattalion</h3>
-          <p>Unser gemeinsames Clan-Tag gehört zu uns – auf Discord und ingame. Respektvoller Umgang, Teamplay und eine entspannte Atmosphäre stehen im Mittelpunkt.</p>
-        </div>
-        <a class="button secondary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Mitspielen</a>
-      </div>
+      <div class="section-heading"><p class="eyebrow">UNSER CLAN</p><h2>Ein Tag. Eine Einheit.</h2></div>
+      <div class="clan-panel"><div><span class="clan-tag">[BTB]</span><h3>BedTimeBattalion</h3><p>Unser gemeinsames Clan-Tag gehört zu uns – auf Discord und ingame. Respektvoller Umgang, Teamplay und eine entspannte Atmosphäre stehen im Mittelpunkt.</p></div><a class="button secondary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Mitspielen</a></div>
     </section>
   </main>
-
-  <footer>
-    <span>© <span id="year"></span> BedTimeBattalion [BTB]</span>
-    <span>Wardogs · DACH</span>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer><span>© <span id="year"></span> BedTimeBattalion [BTB]</span><span>Wardogs · DACH</span></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
