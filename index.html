@@ -21,6 +21,7 @@
     <nav>
       <a href="#about">Über uns</a>
       <a href="#discord">Discord</a>
+      <a href="#voice-live">Voice Live</a>
       <a href="#rules">Clan</a>
     </nav>
   </header>
@@ -35,7 +36,7 @@
         <p class="hero-subcopy">Ein Wardogs-Clan für Eltern, Feierabend-Gamer und alle, die abends gemeinsam entspannt und trotzdem organisiert zocken wollen.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord beitreten</a>
-          <a class="button secondary" href="#about">Mehr erfahren</a>
+          <a class="button secondary" href="#voice-live">Wer ist im Voice?</a>
         </div>
       </div>
 
@@ -72,13 +73,31 @@
       </div>
     </section>
 
+    <section class="section voice-section" id="voice-live">
+      <div class="section-heading voice-heading">
+        <div>
+          <p class="eyebrow">VOICE LIVE</p>
+          <h2>Wer zockt gerade?</h2>
+        </div>
+        <div class="live-badge"><span></span> LIVE</div>
+      </div>
+      <p class="voice-intro">Hier siehst du automatisch die belegten Sprachkanäle unseres Discord-Servers und die Mitglieder, die gerade darin sind.</p>
+      <div id="voice-status" class="voice-status" aria-live="polite">
+        <div class="voice-loading">Discord wird geladen …</div>
+      </div>
+      <div class="voice-footer">
+        <span id="voice-updated">Live-Daten werden abgerufen</span>
+        <a href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Auf Discord dazukommen →</a>
+      </div>
+    </section>
+
     <section class="section discord-section" id="discord">
       <div class="discord-copy">
-        <p class="eyebrow">LIVE AUF DISCORD</p>
-        <h2>Schau, was gerade bei uns los ist.</h2>
-        <p>Über das Discord-Widget siehst du den Server direkt auf der Homepage. Wenn du dabei sein willst, komm einfach rein.</p>
+        <p class="eyebrow">UNSER DISCORD</p>
+        <h2>Direkt in die Community.</h2>
+        <p>Das offizielle Discord-Widget zeigt dir unseren Server, Online-Mitglieder und verfügbare öffentliche Sprachkanäle.</p>
         <a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Jetzt zu BTB</a>
-        <p class="widget-note">Hinweis: Damit das Widget Mitglieder und Sprachkanäle anzeigen kann, muss in Discord unter <strong>Servereinstellungen → Widget</strong> das Server-Widget aktiviert sein.</p>
+        <p class="widget-note">Damit die Live-Anzeige funktioniert, muss in Discord unter <strong>Servereinstellungen → Widget</strong> das Server-Widget aktiviert sein.</p>
       </div>
       <div class="discord-widget-wrap">
         <iframe
@@ -114,8 +133,6 @@
     <span>Wardogs · DACH</span>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
