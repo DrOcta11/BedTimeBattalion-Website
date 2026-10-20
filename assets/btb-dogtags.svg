@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <title>BTB-Erkennungsmarken</title>
+  <path fill="#171a14" d="M0 0h120v120H0z"/>
+  <circle cx="60" cy="50" r="39" stroke="#b1b68a" stroke-opacity=".22"/>
+  <path stroke="#b1b68a" stroke-width="2" d="M43 20v12a17 17 0 1 0 34 0V20"/>
+  <path fill="#737b57" stroke="#c4ca9d" stroke-width="2" d="M31 43h26v45a13 13 0 0 1-26 0V43Z"/>
+  <path fill="#343b2a" stroke="#b1b68a" stroke-width="2" d="M63 43h26v45a13 13 0 0 1-26 0V43Z"/>
+  <circle cx="44" cy="53" r="2" fill="#c4ca9d"/>
+  <circle cx="76" cy="53" r="2" fill="#c4ca9d"/>
+  <path stroke="#e0e6c0" stroke-linecap="round" stroke-width="2" d="M37 63h14m-14 7h14m-14 7h10m22-14h14m-14 7h14m-14 7h10"/>
+  <path fill="#c4ca9d" d="M56 100h8v4h-8z"/>
+</svg>

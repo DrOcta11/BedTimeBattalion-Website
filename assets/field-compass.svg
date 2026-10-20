@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none">
+  <title>Kompass und topografische Karte</title>
+  <path fill="#171a14" d="M0 0h240v160H0z"/>
+  <path stroke="#b1b68a" stroke-opacity=".18" d="m-18 125 64-39 42 22 52-65 47 29 69-43M-7 149l66-40 40 23 52-65 49 31 55-34M25-9l38 43-19 31 37 42m136-121-34 34 16 29-39 43m22 82-30-37 20-29-32-39"/>
+  <path stroke="#b1b68a" stroke-opacity=".1" d="M0 40h240M0 80h240M0 120h240M40 0v160m40-160v160m40-160v160m40-160v160m40-160v160"/>
+  <circle cx="120" cy="80" r="54" fill="#20251b" stroke="#b1b68a" stroke-opacity=".48"/>
+  <circle cx="120" cy="80" r="42" stroke="#b1b68a" stroke-opacity=".3"/>
+  <circle cx="120" cy="80" r="4" fill="#c4ca9d"/>
+  <path fill="#c4ca9d" d="m120 39 8 36-8 5-8-5 8-36Z"/>
+  <path fill="#737b57" d="m120 121-8-36 8-5 8 5-8 36Z"/>
+  <path stroke="#c4ca9d" stroke-opacity=".7" d="M120 26v8m0 92v8m54-54h-8m-92 0h-8"/>
+  <path fill="#c4ca9d" d="M117 16h6v8h-6z"/>
+</svg>
