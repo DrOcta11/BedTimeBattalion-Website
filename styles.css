@@ -547,9 +547,16 @@ a:focus-visible {
 .music-toggle[aria-pressed="true"] { background: var(--panel); border-color: var(--olive-dark); color: var(--paper); }
 .music-toggle[aria-pressed="true"] span { color: var(--olive); }
 
-.music-player { margin-top: 20px; }
-.music-player[hidden] { display: none; }
-.music-player iframe { display: block; width: min(100%, 560px); aspect-ratio: 16 / 9; border: 0; }
+.music-player {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.music-player iframe { width: 1px; height: 1px; border: 0; }
 
 .join-section {
   position: relative;

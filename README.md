@@ -11,4 +11,4 @@ Der VPS veröffentlicht über Funnel ausschließlich den lokalen Voice-Proxy auf
 
 ## Soundtrack
 
-Der War Dogs Match-End-Track wird über den vom Benutzer bereitgestellten YouTube-Link eingebettet. Der Player wird erst nach Klick auf „Soundtrack starten“ geladen und beim Stoppen wieder entfernt.
+Der War Dogs Match-End-Track wird über einen versteckten YouTube-Player eingebettet und beim Seitenaufruf automatisch gestartet. Der sichtbare Schalter stoppt oder startet den Track. Browser können Autoplay mit Ton blockieren; dann muss der Besucher den Schalter einmal betätigen.

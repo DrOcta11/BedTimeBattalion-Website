@@ -11,28 +11,31 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 if (musicToggleEl && musicPlayerEl) {
+  const startMusic = () => {
+    const player = document.createElement('iframe');
+    player.src = 'https://www.youtube-nocookie.com/embed/muN8R0GBi34?autoplay=1&controls=0&playsinline=1&rel=0';
+    player.title = 'War Dogs – Match End Theme auf YouTube';
+    player.allow = 'autoplay; encrypted-media';
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    musicPlayerEl.replaceChildren(player);
+    musicToggleEl.setAttribute('aria-pressed', 'true');
+    musicToggleEl.innerHTML = 'Soundtrack stoppen <span aria-hidden="true">■</span>';
+  };
+
   musicToggleEl.addEventListener('click', () => {
     const isPlaying = musicToggleEl.getAttribute('aria-pressed') === 'true';
 
     if (isPlaying) {
       musicPlayerEl.replaceChildren();
-      musicPlayerEl.hidden = true;
       musicToggleEl.setAttribute('aria-pressed', 'false');
       musicToggleEl.innerHTML = 'Soundtrack starten <span aria-hidden="true">▶</span>';
       return;
     }
 
-    const player = document.createElement('iframe');
-    player.src = 'https://www.youtube-nocookie.com/embed/muN8R0GBi34?autoplay=1&controls=1&playsinline=1&rel=0';
-    player.title = 'War Dogs – Match End Theme auf YouTube';
-    player.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
-    player.referrerPolicy = 'strict-origin-when-cross-origin';
-    player.allowFullscreen = true;
-    musicPlayerEl.replaceChildren(player);
-    musicPlayerEl.hidden = false;
-    musicToggleEl.setAttribute('aria-pressed', 'true');
-    musicToggleEl.innerHTML = 'Soundtrack stoppen <span aria-hidden="true">■</span>';
+    startMusic();
   });
+
+  startMusic();
 }
 
 function escapeHtml(value = '') {
