@@ -19,14 +19,25 @@ function escapeHtml(value = '') {
 function renderVoice(data) {
   const channels = Array.isArray(data.channels) ? data.channels : [];
   const members = Array.isArray(data.members) ? data.members : [];
+  const channelsById = new Map(channels.map(channel => [channel.id, channel]));
+  const membersByChannel = new Map();
 
-  const occupied = channels
-    .map(channel => ({
-      ...channel,
-      members: members.filter(member => member.channel_id === channel.id)
-    }))
-    .filter(channel => channel.members.length > 0)
-    .sort((a, b) => (a.position ?? 0) - (b.position ?? 0));
+  members.forEach(member => {
+    if (!member.channel_id) return;
+
+    const channelMembers = membersByChannel.get(member.channel_id) || [];
+    channelMembers.push(member);
+    membersByChannel.set(member.channel_id, channelMembers);
+  });
+
+  const occupied = [...membersByChannel].map(([id, channelMembers]) => ({
+    ...channelsById.get(id),
+    id,
+    members: channelMembers
+  })).sort((a, b) =>
+    (a.position ?? Number.MAX_SAFE_INTEGER) - (b.position ?? Number.MAX_SAFE_INTEGER)
+    || a.id.localeCompare(b.id)
+  );
 
   if (!occupied.length) {
     statusEl.innerHTML = `
@@ -37,7 +48,9 @@ function renderVoice(data) {
     return;
   }
 
+  let dynamicChannelNumber = 0;
   statusEl.innerHTML = occupied.map(channel => {
+    const channelName = channel.name || `Dynamischer Sprachkanal ${++dynamicChannelNumber}`;
     const memberCards = channel.members.map(member => {
       const name = escapeHtml(member.nick || member.username || 'Discord-Mitglied');
       const avatar = member.avatar_url
@@ -50,7 +63,7 @@ function renderVoice(data) {
     return `
       <article class="voice-channel">
         <div class="voice-channel-head">
-          <span class="voice-channel-name">🔊 ${escapeHtml(channel.name)}</span>
+          <span class="voice-channel-name">🔊 ${escapeHtml(channelName)}</span>
           <span class="voice-channel-count">${channel.members.length} ${channel.members.length === 1 ? 'Person' : 'Personen'}</span>
         </div>
         <div class="voice-members">${memberCards}</div>
