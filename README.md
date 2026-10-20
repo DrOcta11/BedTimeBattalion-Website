@@ -3,8 +3,8 @@ bedtimebattalion-website
 
 ## Voice-Live-Daten
 
-Die Homepage nutzt das öffentliche Discord-Widget unter:
+Die Homepage ruft die öffentliche Voice-only-API über Tailscale Funnel ab:
 
-`https://discord.com/api/guilds/1546613563215585320/widget.json`
+`https://btb-voice-api.tail890b5a.ts.net/api/voice`
 
-Dafür muss das Server-Widget in den Discord-Servereinstellungen aktiviert sein. Die Anzeige aktualisiert sich automatisch alle 30 Sekunden.
+Der VPS veröffentlicht über Funnel ausschließlich den lokalen Voice-Proxy auf Port `8091`; das Bot-Dashboard bleibt auf `127.0.0.1:8090` beschränkt. Die API gibt aktuelle, belegte Sprachkanäle und deren Anzeigenamen zurück. Die Homepage aktualisiert die Anzeige automatisch alle 30 Sekunden.

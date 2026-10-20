@@ -1,5 +1,4 @@
-const GUILD_ID = '1546613563215585320';
-const WIDGET_URL = `https://discord.com/api/guilds/${GUILD_ID}/widget.json`;
+const VOICE_API_URL = 'https://btb-voice-api.tail890b5a.ts.net/api/voice';
 
 const statusEl = document.getElementById('voice-status');
 const updatedEl = document.getElementById('voice-updated');
@@ -18,65 +17,42 @@ function escapeHtml(value = '') {
 
 function renderVoice(data) {
   const channels = Array.isArray(data.channels) ? data.channels : [];
-  const members = Array.isArray(data.members) ? data.members : [];
-  const channelsById = new Map(channels.map(channel => [channel.id, channel]));
-  const membersByChannel = new Map();
 
-  members.forEach(member => {
-    if (!member.channel_id) return;
-
-    const channelMembers = membersByChannel.get(member.channel_id) || [];
-    channelMembers.push(member);
-    membersByChannel.set(member.channel_id, channelMembers);
-  });
-
-  const occupied = [...membersByChannel].map(([id, channelMembers]) => ({
-    ...channelsById.get(id),
-    id,
-    members: channelMembers
-  })).sort((a, b) =>
-    (a.position ?? Number.MAX_SAFE_INTEGER) - (b.position ?? Number.MAX_SAFE_INTEGER)
-    || a.id.localeCompare(b.id)
-  );
-
-  if (!occupied.length) {
+  if (!channels.length) {
     statusEl.innerHTML = `
       <div class="voice-empty">
         <strong>Gerade ist noch niemand im Voice.</strong><br>
-        Sobald jemand einen sichtbaren Sprachkanal betritt, erscheint er hier automatisch.
+        Sobald jemand einen Sprachkanal betritt, erscheint er hier automatisch.
       </div>`;
     return;
   }
 
-  let dynamicChannelNumber = 0;
-  statusEl.innerHTML = occupied.map(channel => {
-    const channelName = channel.name || `Dynamischer Sprachkanal ${++dynamicChannelNumber}`;
-    const memberCards = channel.members.map(member => {
-      const name = escapeHtml(member.nick || member.username || 'Discord-Mitglied');
-      const avatar = member.avatar_url
-        ? `<img src="${escapeHtml(member.avatar_url)}" alt="Avatar von ${name}" loading="lazy">`
-        : `<span class="voice-avatar-fallback">${name.slice(0, 1).toUpperCase()}</span>`;
-
-      return `<div class="voice-member">${avatar}<span class="voice-member-name">${name}</span></div>`;
-    }).join('');
+  statusEl.innerHTML = channels.map(channel => {
+    const channelName = escapeHtml(channel.name || 'Sprachkanal');
+    const members = Array.isArray(channel.members) ? channel.members : [];
+    const memberList = members.length
+      ? `<ul class="voice-members">${members.map(member =>
+        `<li class="voice-member">${escapeHtml(member.name || 'Discord-Mitglied')}</li>`
+      ).join('')}</ul>`
+      : '<p class="voice-no-members">Keine Mitglieder im Kanal.</p>';
 
     return `
       <article class="voice-channel">
-        <div class="voice-channel-head">
-          <span class="voice-channel-name">🔊 ${escapeHtml(channelName)}</span>
-          <span class="voice-channel-count">${channel.members.length} ${channel.members.length === 1 ? 'Person' : 'Personen'}</span>
-        </div>
-        <div class="voice-members">${memberCards}</div>
+        <h3 class="voice-channel-name">🔊 ${channelName}</h3>
+        ${memberList}
       </article>`;
   }).join('');
 }
 
 async function loadDiscordVoice() {
   try {
-    const response = await fetch(WIDGET_URL, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`Discord Widget HTTP ${response.status}`);
+    const response = await fetch(VOICE_API_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Voice-API HTTP ${response.status}`);
 
     const data = await response.json();
+    if (!data || !Array.isArray(data.channels)) {
+      throw new Error('Ungültige Antwort der Voice-API');
+    }
     renderVoice(data);
 
     if (updatedEl) {
@@ -86,9 +62,9 @@ async function loadDiscordVoice() {
     statusEl.innerHTML = `
       <div class="voice-error">
         <strong>Voice-Liveanzeige momentan nicht verfügbar.</strong><br>
-        Prüfe bitte in Discord unter Servereinstellungen → Widget, ob das Server-Widget aktiviert ist.
+        Die Verbindung zur Bot-Voice-API ist momentan nicht verfügbar.
       </div>`;
-    if (updatedEl) updatedEl.textContent = 'Discord-Liveverbindung nicht verfügbar';
+    if (updatedEl) updatedEl.textContent = 'Bot-Liveverbindung nicht verfügbar';
     console.error(error);
   }
 }
