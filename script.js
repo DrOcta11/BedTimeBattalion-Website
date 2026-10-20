@@ -12,6 +12,11 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 if (musicToggleEl && musicAudioEl) {
+  const removeGestureListeners = () => {
+    document.removeEventListener('pointerdown', handleFirstGesture);
+    document.removeEventListener('keydown', handleFirstGesture);
+  };
+
   const updateMusicButton = (isPlaying) => {
     musicToggleEl.setAttribute('aria-pressed', String(isPlaying));
     musicToggleEl.innerHTML = isPlaying
@@ -19,15 +24,24 @@ if (musicToggleEl && musicAudioEl) {
       : 'Sound starten <span aria-hidden="true">▶</span>';
   };
 
+  const handleFirstGesture = (event) => {
+    if (!event.isTrusted || !(event.target instanceof Element)) return;
+    if (event.target.closest('a, button, input, select, textarea, [contenteditable="true"]')) return;
+
+    removeGestureListeners();
+    startMusic();
+  };
+
   const startMusic = async () => {
     try {
       await musicAudioEl.play();
+      removeGestureListeners();
       updateMusicButton(true);
       if (musicStatusEl) musicStatusEl.textContent = 'Tactical Confirmation läuft';
     } catch (error) {
       updateMusicButton(false);
       if (error.name === 'NotAllowedError') {
-        if (musicStatusEl) musicStatusEl.textContent = 'Autoplay blockiert – zum Starten einmal klicken';
+        if (musicStatusEl) musicStatusEl.textContent = 'Autoplay blockiert – auf einen freien Bereich klicken oder den Button nutzen';
         console.info('Der Browser blockiert Audiostart mit Ton bis zur Nutzerinteraktion.');
       } else {
         if (musicStatusEl) musicStatusEl.textContent = 'Der Soundtrack konnte nicht gestartet werden';
@@ -44,6 +58,7 @@ if (musicToggleEl && musicAudioEl) {
   });
 
   musicToggleEl.addEventListener('click', async () => {
+    removeGestureListeners();
     if (!musicAudioEl.paused) {
       musicAudioEl.pause();
       musicAudioEl.currentTime = 0;
@@ -53,6 +68,8 @@ if (musicToggleEl && musicAudioEl) {
     }
     await startMusic();
   });
+  document.addEventListener('pointerdown', handleFirstGesture);
+  document.addEventListener('keydown', handleFirstGesture);
   startMusic();
 }
 

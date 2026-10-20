@@ -125,6 +125,42 @@ a:focus-visible {
   gap: clamp(32px, 6vw, 88px);
   margin: 0 auto;
   padding: 82px 0 98px;
+  isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.hero::before {
+  background:
+    radial-gradient(ellipse at 78% 43%, rgba(177, 182, 138, .14), transparent 34%),
+    radial-gradient(ellipse at 14% 88%, rgba(115, 123, 87, .12), transparent 38%),
+    repeating-linear-gradient(132deg, transparent 0 47px, rgba(240, 238, 229, .025) 48px, transparent 49px 96px);
+  background-size: 120% 120%, 130% 130%, 100% 100%;
+  animation: tactical-drift 32s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  inset: -20% -70%;
+  background: linear-gradient(105deg, transparent 42%, rgba(177, 182, 138, .055) 49%, transparent 56%);
+  transform: translateX(-35%);
+  animation: tactical-sweep 18s ease-in-out infinite;
+}
+
+@keyframes tactical-drift {
+  from { background-position: 0% 0%, 100% 100%, 0 0; }
+  to { background-position: 12% 8%, 86% 92%, 24px -18px; }
+}
+
+@keyframes tactical-sweep {
+  0%, 18% { transform: translateX(-35%); }
+  82%, 100% { transform: translateX(35%); }
 }
 
 .hero-copy { position: relative; z-index: 1; }
@@ -349,12 +385,29 @@ a:focus-visible {
 .value-card p { margin-bottom: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 
 .voice-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: #171a14;
 }
 
+.voice-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 12% 30%, rgba(177, 182, 138, .075), transparent 42%),
+    repeating-linear-gradient(0deg, transparent 0 43px, rgba(240, 238, 229, .018) 44px, transparent 45px 88px);
+  content: "";
+  animation: tactical-drift 38s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
 .voice-inner {
+  position: relative;
+  z-index: 1;
   width: min(100% - 10vw, var(--page-width));
   margin: 0 auto;
   padding: 86px 0 76px;
