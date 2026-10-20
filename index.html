@@ -120,15 +120,27 @@
           <span>BTB · SOUNDTRACK</span>
         </div>
         <div class="music-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> Der Sound zum Einsatz</p>
-          <h2 id="music-title">War Dogs<br><span>Match End Theme</span></h2>
-          <p>Der offizielle End-of-Round-Track läuft im Hintergrund. Mit dem Schalter kannst du ihn jederzeit starten oder stoppen.</p>
+          <p class="eyebrow"><span class="eyebrow-line"></span> Aktuelle Season</p>
+          <h2 id="music-title">Season<br><span>Soundtrack</span></h2>
+          <p>Der YouTube-Clip der aktuellen Season startet stumm. Über den Player kannst du ihn öffnen oder den Ton einschalten.</p>
           <div class="music-controls">
-            <button class="button button-primary music-toggle" id="music-toggle" type="button" aria-pressed="true">
-              Soundtrack stoppen <span aria-hidden="true">■</span>
+            <button class="button button-primary music-toggle" id="music-toggle" type="button" aria-pressed="false">
+              BTB-Sound starten <span aria-hidden="true">▶</span>
             </button>
+            <span class="music-status" id="music-status" aria-live="polite">Versuche automatischen Start …</span>
           </div>
-          <div class="music-player" id="music-player" aria-hidden="true"></div>
+          <div class="music-video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/4D2JTuaMczs?autoplay=1&amp;mute=1&amp;controls=1&amp;playsinline=1&amp;rel=0"
+              title="Soundtrack der aktuellen Season auf YouTube"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <audio id="music-audio" autoplay loop preload="auto" hidden>
+            <source src="assets/btb-tactical-confirmation.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
     </section>

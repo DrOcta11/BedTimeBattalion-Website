@@ -546,17 +546,18 @@ a:focus-visible {
 .music-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
 .music-toggle[aria-pressed="true"] { background: var(--panel); border-color: var(--olive-dark); color: var(--paper); }
 .music-toggle[aria-pressed="true"] span { color: var(--olive); }
+.music-status { color: var(--quiet); font-size: 10px; }
 
-.music-player {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.music-video {
+  width: min(100%, 360px);
+  height: 200px;
+  margin-top: 24px;
   overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  border: 1px solid var(--line);
+  background: var(--ink-soft);
 }
 
-.music-player iframe { width: 1px; height: 1px; border: 0; }
+.music-video iframe { width: 100%; height: 100%; border: 0; }
 
 .join-section {
   position: relative;

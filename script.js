@@ -5,36 +5,54 @@ const updatedEl = document.getElementById('voice-updated');
 const connectionEl = document.getElementById('voice-connection');
 const connectionLabelEl = document.getElementById('voice-connection-label');
 const musicToggleEl = document.getElementById('music-toggle');
-const musicPlayerEl = document.getElementById('music-player');
+const musicAudioEl = document.getElementById('music-audio');
+const musicStatusEl = document.getElementById('music-status');
 const yearEl = document.getElementById('year');
 
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-if (musicToggleEl && musicPlayerEl) {
-  const startMusic = () => {
-    const player = document.createElement('iframe');
-    player.src = 'https://www.youtube-nocookie.com/embed/muN8R0GBi34?autoplay=1&controls=0&playsinline=1&rel=0';
-    player.title = 'War Dogs – Match End Theme auf YouTube';
-    player.allow = 'autoplay; encrypted-media';
-    player.referrerPolicy = 'strict-origin-when-cross-origin';
-    musicPlayerEl.replaceChildren(player);
-    musicToggleEl.setAttribute('aria-pressed', 'true');
-    musicToggleEl.innerHTML = 'Soundtrack stoppen <span aria-hidden="true">■</span>';
+if (musicToggleEl && musicAudioEl) {
+  const updateMusicButton = (isPlaying) => {
+    musicToggleEl.setAttribute('aria-pressed', String(isPlaying));
+    musicToggleEl.innerHTML = isPlaying
+      ? 'Sound stoppen <span aria-hidden="true">■</span>'
+      : 'Sound starten <span aria-hidden="true">▶</span>';
   };
 
-  musicToggleEl.addEventListener('click', () => {
-    const isPlaying = musicToggleEl.getAttribute('aria-pressed') === 'true';
-
-    if (isPlaying) {
-      musicPlayerEl.replaceChildren();
-      musicToggleEl.setAttribute('aria-pressed', 'false');
-      musicToggleEl.innerHTML = 'Soundtrack starten <span aria-hidden="true">▶</span>';
-      return;
+  const startMusic = async () => {
+    try {
+      await musicAudioEl.play();
+      updateMusicButton(true);
+      if (musicStatusEl) musicStatusEl.textContent = 'Tactical Confirmation läuft';
+    } catch (error) {
+      updateMusicButton(false);
+      if (error.name === 'NotAllowedError') {
+        if (musicStatusEl) musicStatusEl.textContent = 'Autoplay blockiert – zum Starten einmal klicken';
+        console.info('Der Browser blockiert Audiostart mit Ton bis zur Nutzerinteraktion.');
+      } else {
+        if (musicStatusEl) musicStatusEl.textContent = 'Der Soundtrack konnte nicht gestartet werden';
+        console.error('Audiowiedergabe fehlgeschlagen:', error);
+      }
     }
+  };
 
-    startMusic();
+  musicAudioEl.volume = 0.24;
+  musicAudioEl.addEventListener('error', () => {
+    updateMusicButton(false);
+    if (musicStatusEl) musicStatusEl.textContent = 'Die Audiodatei konnte nicht geladen werden';
+    console.error('Audiodatei konnte nicht geladen werden:', musicAudioEl.error);
   });
 
+  musicToggleEl.addEventListener('click', async () => {
+    if (!musicAudioEl.paused) {
+      musicAudioEl.pause();
+      musicAudioEl.currentTime = 0;
+      updateMusicButton(false);
+      if (musicStatusEl) musicStatusEl.textContent = 'Soundtrack pausiert';
+      return;
+    }
+    await startMusic();
+  });
   startMusic();
 }
 
