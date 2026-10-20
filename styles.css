@@ -253,13 +253,6 @@ h3 { font-size:26px; line-height:1; margin:48px 0 12px; text-transform:uppercase
 .voice-footer a { color:var(--gold); font-weight:700; }
 .voice-footer a:hover { color:var(--gold-bright); }
 
-.discord-section { display:grid; grid-template-columns:1fr 420px; gap:80px; align-items:center; }
-.discord-copy h2 { margin-bottom:25px; }
-.discord-copy .button { margin-top:15px; }
-.widget-note { font-size:14px; margin-top:28px; max-width:650px; }
-.discord-widget-wrap { background:#0d0e0e; border:1px solid var(--line); padding:18px; display:flex; justify-content:center; box-shadow:0 30px 80px rgba(0,0,0,.35); }
-.discord-widget-wrap iframe { max-width:100%; }
-
 .clan-panel {
   border:1px solid var(--line);
   border-radius:8px;
@@ -296,8 +289,6 @@ footer {
   .cards { grid-template-columns:1fr; }
   .card { min-height:0; }
   .card h3 { margin-top:30px; }
-  .discord-section { grid-template-columns:1fr; gap:45px; }
-  .discord-widget-wrap { width:fit-content; max-width:100%; margin:auto; }
   .clan-panel { align-items:flex-start; }
 }
 
