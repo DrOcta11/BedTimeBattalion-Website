@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <title>Signalwellen über einer nächtlichen Einsatzlandschaft</title>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#566044" stop-opacity=".5"/>
+      <stop offset=".7" stop-color="#22281d" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#11130f" stop-opacity=".1"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1440v900H0z"/>
+  <circle cx="1080" cy="376" r="5" fill="#d5dda7"/>
+  <circle cx="1080" cy="376" r="32" stroke="#d5dda7" stroke-opacity=".54"/>
+  <circle cx="1080" cy="376" r="72" stroke="#d5dda7" stroke-opacity=".35"/>
+  <circle cx="1080" cy="376" r="118" stroke="#d5dda7" stroke-opacity=".2"/>
+  <path stroke="#d5dda7" stroke-opacity=".38" stroke-dasharray="5 9" d="M1080 258v236m-118-118h236m-202-84 168 168m0-168L996 460"/>
+  <path fill="#20271c" fill-opacity=".9" d="m0 526 138-95 122 83 144-138 106 133 130-82 139 107 139-145 123 105 110-87 189 115v378H0z"/>
+  <path fill="#303a29" fill-opacity=".94" d="m0 673 153-91 111 55 145-109 160 93 130-55 136 94 147-117 148 95 118-77 192 87v252H0z"/>
+  <path fill="#11140f" fill-opacity=".92" d="M0 782q231-67 436 15t426-18q298-110 578-6v127H0z"/>
+  <path stroke="#c5ce9c" stroke-opacity=".55" stroke-width="3" d="M720 655V473m-56 182h112m-95-74 39-109 39 109m-62-62h46"/>
+  <path stroke="#c5ce9c" stroke-opacity=".38" d="M708 487q12-16 24 0m-39-16q27-36 54 0m-69-16q42-57 84 0"/>
+  <g fill="#c5ce9c" fill-opacity=".44">
+    <circle cx="354" cy="307" r="2"/><circle cx="438" cy="380" r="2"/><circle cx="612" cy="256" r="2"/>
+    <circle cx="772" cy="202" r="2"/><circle cx="913" cy="293" r="2"/><circle cx="1268" cy="224" r="2"/>
+    <circle cx="1244" cy="567" r="2"/><circle cx="296" cy="572" r="2"/>
+  </g>
+  <path stroke="#c5ce9c" stroke-opacity=".22" d="M80 819h260m744-24h275"/>
+</svg>

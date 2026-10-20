@@ -9,12 +9,13 @@ const musicAudioEl = document.getElementById('music-audio');
 const musicStatusEl = document.getElementById('music-status');
 const yearEl = document.getElementById('year');
 const buttonClickAudio = new Audio('assets/btb-command-confirmation.mp3');
-const buttonHoverAudio = new Audio('assets/btb-command-hover.mp3');
+const buttonHoverAudio = new Audio('assets/btb-tactical-confirmation.mp3');
+let buttonHoverTimeout;
 
 buttonClickAudio.preload = 'auto';
 buttonClickAudio.volume = 0.35;
 buttonHoverAudio.preload = 'auto';
-buttonHoverAudio.volume = 0.3;
+buttonHoverAudio.volume = 0.16;
 
 document.addEventListener('pointerover', (event) => {
   if (event.pointerType !== 'mouse' || !(event.target instanceof Element)) return;
@@ -22,9 +23,16 @@ document.addEventListener('pointerover', (event) => {
   if (!button || button.matches(':disabled')) return;
   if (event.relatedTarget instanceof Node && button.contains(event.relatedTarget)) return;
 
+  clearTimeout(buttonHoverTimeout);
+  buttonHoverAudio.pause();
   buttonHoverAudio.currentTime = 0;
-  buttonHoverAudio.play().catch((error) => {
-    console.error('Button-Hover-Sound konnte nicht abgespielt werden:', error);
+  buttonHoverAudio.play().then(() => {
+    buttonHoverTimeout = setTimeout(() => {
+      buttonHoverAudio.pause();
+      buttonHoverAudio.currentTime = 0;
+    }, 700);
+  }).catch((error) => {
+    console.error('Soundtrack-Hover konnte nicht abgespielt werden:', error);
   });
 });
 

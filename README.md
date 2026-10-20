@@ -15,4 +15,8 @@ Der VPS veröffentlicht über Funnel ausschließlich den lokalen Voice-Proxy auf
 
 Der kurze Sound `assets/btb-command-confirmation.mp3` wird beim Klick auf die gestalteten Buttons und den Discord-Button abgespielt.
 
-`assets/btb-command-hover.mp3` spielt denselben Button-Typen beim Darüberfahren mit der Maus einen separaten Hover-Sound ab.
+Beim Darüberfahren mit der Maus über Buttons spielt `assets/btb-tactical-confirmation.mp3` kurz als Hover-Sound an. Der normale Klicksound bleibt separat.
+
+## Hintergrundmotive
+
+Die Hero-, Clan-, Voice-, Soundtrack- und Join-Bereiche erhalten unterschiedliche animierte SVG-Hintergründe. Die Animationen werden bei aktivierter Systemeinstellung „Bewegung reduzieren“ abgeschaltet.

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <title>Funkposten in einer bewaldeten Hügellandschaft</title>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#6e7850" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#171a14" stop-opacity=".12"/>
+    </linearGradient>
+    <linearGradient id="hill" x2="0" y2="1">
+      <stop stop-color="#596644"/>
+      <stop offset="1" stop-color="#171a14"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1440v900H0z"/>
+  <circle cx="1110" cy="216" r="114" fill="#c7cf9c" fill-opacity=".09"/>
+  <circle cx="1110" cy="216" r="78" stroke="#c7cf9c" stroke-opacity=".35"/>
+  <circle cx="1110" cy="216" r="46" stroke="#c7cf9c" stroke-opacity=".24"/>
+  <path stroke="#c7cf9c" stroke-opacity=".48" stroke-width="2" d="M1110 92v248m-124-124h248m-212-88 176 176m0-176L1022 304"/>
+  <path stroke="#d7dfb1" stroke-opacity=".2" stroke-dasharray="6 12" d="M1110 216 740 403 388 350 150 488"/>
+  <path fill="#293323" fill-opacity=".88" d="m0 489 128-81 104 56 146-145 126 128 119-97 117 100 135-165 119 126 131-113 215 129v373H0z"/>
+  <path fill="url(#hill)" d="m0 626 155-82 135 43 148-111 134 89 144-63 139 98 128-105 157 77 157-91 143 67v352H0z"/>
+  <path fill="#11140f" fill-opacity=".88" d="M0 742q280-106 510 8t466-3q226-116 464-18v171H0z"/>
+  <g fill="#141811" fill-opacity=".96">
+    <path d="m136 645 38-113 38 113h-76Zm22-43h34v8h-34Zm-12 26h58v9h-58Zm25-105h10v133h-10Zm976 104 43-127 43 127h-86Zm25-48h36v8h-36Zm-14 29h64v9h-64Zm27-117h11v145h-11Z"/>
+  </g>
+  <path stroke="#c8d19e" stroke-opacity=".72" stroke-width="3" d="m763 459 13-122m-13 122-82-91m82 91 87-92"/>
+  <path stroke="#c8d19e" stroke-opacity=".48" d="M718 363q45-50 90 0m-109-20q64-74 128 0m-152-22q88-101 176 0"/>
+  <path fill="#aeb88a" fill-opacity=".35" d="M751 450h24v48h-24z"/>
+  <path stroke="#d2d9ab" stroke-opacity=".42" d="M80 788h320m650-42h252"/>
+</svg>
