@@ -8,6 +8,21 @@ const musicToggleEl = document.getElementById('music-toggle');
 const musicAudioEl = document.getElementById('music-audio');
 const musicStatusEl = document.getElementById('music-status');
 const yearEl = document.getElementById('year');
+const buttonClickAudio = new Audio('assets/btb-command-confirmation.mp3');
+
+buttonClickAudio.preload = 'auto';
+buttonClickAudio.volume = 0.35;
+
+document.addEventListener('click', (event) => {
+  if (!(event.target instanceof Element)) return;
+  const button = event.target.closest('.button, .nav-join');
+  if (!button || button.matches(':disabled')) return;
+
+  buttonClickAudio.currentTime = 0;
+  buttonClickAudio.play().catch((error) => {
+    console.error('Button-Klicksound konnte nicht abgespielt werden:', error);
+  });
+});
 
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 

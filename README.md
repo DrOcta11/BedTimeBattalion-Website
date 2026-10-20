@@ -12,3 +12,5 @@ Der VPS veröffentlicht über Funnel ausschließlich den lokalen Voice-Proxy auf
 ## BTB-Soundtrack
 
 `assets/btb-tactical-confirmation.mp3` wird beim Laden mit niedriger Lautstärke und in einer Schleife abgespielt. Browser können Autoplay mit Ton blockieren; in dem Fall kann der Besucher den Track über den sichtbaren Schalter starten oder stoppen. Der YouTube-Clip `4D2JTuaMczs` ist als Soundtrack der aktuellen Season eingebettet, startet stumm und zeigt Player-Steuerungen an.
+
+Der kurze Sound `assets/btb-command-confirmation.mp3` wird beim Klick auf die gestalteten Buttons und den Discord-Button abgespielt.
