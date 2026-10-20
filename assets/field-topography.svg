@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <title>Topografische Einsatzkarte</title>
+  <g stroke="#b1b68a" stroke-width="1.5">
+    <path stroke-opacity=".2" d="M-100 150c136-113 213 53 357-32s224-50 332 33 215 93 331 11 228-92 402 18"/>
+    <path stroke-opacity=".15" d="M-100 180c136-113 213 53 357-32s224-50 332 33 215 93 331 11 228-92 402 18"/>
+    <path stroke-opacity=".12" d="M-100 210c136-113 213 53 357-32s224-50 332 33 215 93 331 11 228-92 402 18"/>
+    <path stroke-opacity=".2" d="M-80 585c149-84 237 39 379-8s195-102 310-42 203 152 352 79 247-95 468-12"/>
+    <path stroke-opacity=".15" d="M-80 615c149-84 237 39 379-8s195-102 310-42 203 152 352 79 247-95 468-12"/>
+    <path stroke-opacity=".12" d="M-80 645c149-84 237 39 379-8s195-102 310-42 203 152 352 79 247-95 468-12"/>
+    <path stroke-opacity=".14" d="M0 0h1440v900H0z"/>
+    <path stroke-opacity=".1" d="M0 90h1440M0 810h1440M90 0v900M1350 0v900"/>
+  </g>
+  <g stroke="#d0d8a4" stroke-opacity=".4">
+    <circle cx="1190" cy="250" r="82"/>
+    <circle cx="1190" cy="250" r="68"/>
+    <circle cx="1190" cy="250" r="8"/>
+    <path d="M1190 142v34m0 148v34m-108-108h34m148 0h34M1190 190l12 48-12 12-12-12 12-48Z"/>
+    <path d="M260 697h66m-33-33v66m-46-56 92 46m0-46-92 46"/>
+    <path stroke-dasharray="5 8" d="M326 697h260q70 0 112-49l108-124q45-51 109-51h193"/>
+  </g>
+  <g fill="#d0d8a4" fill-opacity=".48" font-family="monospace" font-size="12" letter-spacing="3">
+    <text x="1090" y="365">N / GRID 04</text>
+    <text x="205" y="755">BTB · FIELD MAP</text>
+    <text x="650" y="485">ROUTE / 01</text>
+  </g>
+</svg>
