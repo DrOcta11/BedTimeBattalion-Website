@@ -83,27 +83,21 @@ h1 span { color:var(--gold-bright); font-size:.52em; letter-spacing:.08em; }
 .button.secondary:hover { border-color:var(--gold); color:var(--gold-bright); }
 
 .hero-card {
-  width:min(390px, 90vw);
-  aspect-ratio:1;
-  border:1px solid var(--line);
-  border-radius:50%;
+  width:min(500px, 100%);
   margin:auto;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
   position:relative;
-  box-shadow:inset 0 0 80px rgba(216,195,141,.025), 0 0 100px rgba(0,0,0,.6);
+  isolation:isolate;
 }
-.hero-logo { width:112px; height:112px; object-fit:contain; margin-bottom:8px; filter:drop-shadow(0 0 18px rgba(216,195,141,.18)); }
-.hero-card::before, .hero-card::after { content:''; position:absolute; border:1px solid rgba(216,195,141,.08); border-radius:50%; }
-.hero-card::before { inset:16px; }
-.hero-card::after { inset:-18px; }
-.moon { font-size:86px; line-height:.9; color:var(--gold-bright); transform:rotate(-18deg); text-shadow:0 0 28px rgba(240,223,169,.18); }
-.stars { color:var(--gold); letter-spacing:10px; font-size:11px; margin:12px 0; }
-.hero-card strong { font-size:37px; line-height:1; letter-spacing:.05em; }
-.hero-card > span { font-size:22px; letter-spacing:.24em; color:var(--gold); }
-.hero-card small { position:absolute; bottom:55px; color:var(--muted); letter-spacing:.2em; }
+.hero-card::before {
+  content:'';
+  position:absolute;
+  inset:12%;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(216,195,141,.13), transparent 68%);
+  filter:blur(24px);
+  z-index:-1;
+}
+.hero-logo { display:block; width:100%; height:auto; filter:drop-shadow(0 20px 50px rgba(0,0,0,.45)); }
 
 .section { max-width:1250px; margin:auto; padding:110px clamp(24px, 5vw, 70px); }
 .section-heading { max-width:780px; margin-bottom:48px; }
@@ -181,11 +175,7 @@ footer { max-width:1250px; margin:auto; border-top:1px solid rgba(255,255,255,.0
   h1 { font-size:54px; }
   .hero { padding-left:20px; padding-right:20px; }
   .section { padding:80px 20px; }
-  .hero-card { width:270px; }
-  .moon { font-size:65px; }
-  .hero-card strong { font-size:29px; }
-  .hero-card > span { font-size:17px; }
-  .hero-card small { bottom:38px; }
+  .hero-card { width:min(320px, 80vw); }
   .card, .clan-panel { padding:28px; }
   footer { flex-direction:column; gap:8px; }
 }
