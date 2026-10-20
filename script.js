@@ -4,9 +4,36 @@ const statusEl = document.getElementById('voice-status');
 const updatedEl = document.getElementById('voice-updated');
 const connectionEl = document.getElementById('voice-connection');
 const connectionLabelEl = document.getElementById('voice-connection-label');
+const musicToggleEl = document.getElementById('music-toggle');
+const musicPlayerEl = document.getElementById('music-player');
 const yearEl = document.getElementById('year');
 
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+if (musicToggleEl && musicPlayerEl) {
+  musicToggleEl.addEventListener('click', () => {
+    const isPlaying = musicToggleEl.getAttribute('aria-pressed') === 'true';
+
+    if (isPlaying) {
+      musicPlayerEl.replaceChildren();
+      musicPlayerEl.hidden = true;
+      musicToggleEl.setAttribute('aria-pressed', 'false');
+      musicToggleEl.innerHTML = 'Soundtrack starten <span aria-hidden="true">▶</span>';
+      return;
+    }
+
+    const player = document.createElement('iframe');
+    player.src = 'https://www.youtube-nocookie.com/embed/muN8R0GBi34?autoplay=1&controls=1&playsinline=1&rel=0';
+    player.title = 'War Dogs – Match End Theme auf YouTube';
+    player.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    player.allowFullscreen = true;
+    musicPlayerEl.replaceChildren(player);
+    musicPlayerEl.hidden = false;
+    musicToggleEl.setAttribute('aria-pressed', 'true');
+    musicToggleEl.innerHTML = 'Soundtrack stoppen <span aria-hidden="true">■</span>';
+  });
+}
 
 function escapeHtml(value = '') {
   return String(value)
