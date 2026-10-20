@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <title>Wachhund im nächtlichen Einsatzgebiet</title>
+  <desc>Stilisierte Silhouette eines einsatzbereiten Hundes vor einer dunklen Wald- und Berglandschaft.</desc>
+  <defs>
+    <linearGradient id="sky" x1="720" x2="720" y1="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#737b57" stop-opacity=".32"/>
+      <stop offset=".55" stop-color="#343b2c" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#11130f" stop-opacity=".08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 390 -530 0 1010 340)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c1c99a" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#b1b68a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridge" x1="835" x2="835" y1="370" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#333a2b"/>
+      <stop offset="1" stop-color="#11130f"/>
+    </linearGradient>
+    <linearGradient id="dog" x1="958" x2="958" y1="453" y2="746" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#89906b"/>
+      <stop offset="1" stop-color="#3c4431"/>
+    </linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse">
+      <path stroke="#d7ddbd" stroke-opacity=".08" d="M54 0H0v54"/>
+    </pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1440v900H0z"/>
+  <path fill="url(#glow)" d="M0 0h1440v900H0z"/>
+  <path stroke="#c3cba0" stroke-opacity=".14" d="M0 618h1440M0 675h1440M1090 0v900"/>
+  <path fill="#171c15" fill-opacity=".76" d="m0 493 85-83 55 54 79-131 83 116 80-171 93 189 98-80 67 87 102-147 93 132 92-112 64 73 86-133 90 132 83-81 87 76v485H0z"/>
+  <path fill="#20261b" fill-opacity=".9" d="m0 623 93-66 66 28 88-119 85 111 65-72 72 86 93-135 86 132 83-64 64 72 90-154 77 141 85-70 77 65 96-92 100 80v334H0z"/>
+  <g fill="#11140f" fill-opacity=".9">
+    <path d="m55 615 37-101 37 101H55Zm11-36h52v8H66Zm-18 26h88v9H48Zm38-89h12v116H86Zm202 100 31-84 32 84h-63Zm9-30h45v8h-45Zm-15 22h75v9h-75Zm27-80h10v102h-10Zm472 54 42-115 42 115h-84Zm12-41h60v9h-60Zm-20 30h100v10H785Zm46-109h12v141h-12Zm363 113 35-94 35 94h-70Zm10-34h50v8h-50Zm-17 25h83v9h-83Zm36-89h11v117h-11Z"/>
+  </g>
+  <path fill="url(#ridge)" d="m0 745 118-67 104 37 129-74 117 56 122-103 107 70 110-46 115 52 105-81 116 48 112-59 105 50v272H0z"/>
+  <g opacity=".8">
+    <path stroke="#aeb68b" stroke-opacity=".32" d="M80 790h340m82 34h216m364-48h273"/>
+    <path stroke="#aeb68b" stroke-opacity=".22" d="M143 812h92m618 14h171m128-51h74"/>
+  </g>
+  <g fill="url(#dog)" stroke="#a8b187" stroke-opacity=".35" stroke-width="3">
+    <path d="m826 566 36-42 47-23 22-36 19-51 24 7 10 39 36 17 38 4 32 22 40 5 21 20 23 12 8 24-18 16-43-2-30-11-37 13-24 26-4 61 18 40 3 43-19 12-21-13-10-49-29-55-19-5-23 56-4 48-19 17-21-9 2-33 12-52-7-42-29 19-37 7-21-8-17 7-25 3-17-13-36-6-18-15 6-20 26-9 25-22Zm150-152-4-35 12-30 20 25 20 3-5 27-18 17-25-7Zm-127 154-20 11-17 25-18 7-8-13 15-26 25-17 23 13Z"/>
+  </g>
+  <path stroke="#c5ce9c" stroke-opacity=".38" stroke-width="3" d="m909 521 33 14 25 3m89 40 20 6 20-5m-147 47-14 46m80-45 20 48"/>
+  <path stroke="#c5ce9c" stroke-opacity=".3" d="M1100 356h116m-58-58v116"/>
+  <circle cx="1158" cy="356" r="53" stroke="#c5ce9c" stroke-opacity=".24"/>
+  <circle cx="1158" cy="356" r="4" fill="#c5ce9c" fill-opacity=".5"/>
+  <path fill="url(#grid)" fill-opacity=".5" d="M0 0h1440v900H0z"/>
+</svg>
