@@ -3,56 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BedTimeBattalion [BTB] – Wardogs Clan für Eltern und Feierabend-Gamer im DACH-Raum.">
-  <title>BedTimeBattalion [BTB] | Wardogs Clan</title>
+  <meta name="theme-color" content="#11130f">
+  <meta name="description" content="BedTimeBattalion [BTB] ist der Wardogs-Clan für gemeinsame Runden im DACH-Raum. Schau in unseren Discord und sieh, wer gerade im Voice ist.">
+  <meta property="og:title" content="BedTimeBattalion [BTB]">
+  <meta property="og:description" content="Wenn der Alltag Pause macht, beginnt die gemeinsame Runde. Komm auf unseren Discord.">
+  <meta property="og:type" content="website">
+  <title>BedTimeBattalion [BTB] — Zusammen nach Feierabend</title>
+  <link rel="icon" href="assets/btb-logo-transparent.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home"><span class="brand-mark"><img src="assets/btb-logo.png" alt="BTB Logo" onerror="this.hidden=true">BTB</span><span class="brand-text">BedTimeBattalion</span></a>
-    <nav><a href="#about">Über uns</a><a href="#voice-live">Voice Live</a><a href="#rules">Clan</a></nav>
+    <a class="brand" href="#home" aria-label="BedTimeBattalion – Startseite">
+      <span class="brand-mark"><img src="assets/btb-logo-transparent.png" alt=""></span>
+      <span class="brand-name">BedTime<span>Battalion</span></span>
+    </a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="#about">Unser Clan</a>
+      <a href="#voice-live">Voice live</a>
+      <a class="nav-join" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord beitreten <span aria-hidden="true">↗</span></a>
+    </nav>
   </header>
+
   <main>
     <section class="hero" id="home">
-      <div class="hero-glow"></div>
-      <div class="hero-content">
-        <p class="eyebrow">WARDOGS · DACH · CLAN</p>
-        <h1><span>[BTB]</span><br>BedTimeBattalion</h1>
-        <p class="hero-copy">Wenn die Kinder schlafen, beginnt unsere Schicht.</p>
-        <p class="hero-subcopy">Ein Wardogs-Clan für Eltern, Feierabend-Gamer und alle, die abends gemeinsam entspannt und trotzdem organisiert zocken wollen.</p>
-        <div class="hero-actions"><a class="button primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord beitreten</a><a class="button secondary" href="#voice-live">Wer ist im Voice?</a></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Wardogs · DACH · Discord-Clan</p>
+        <h1>Der Tag war lang.<br><span>Die Runde</span><br>gehört uns.</h1>
+        <p class="hero-description">Wenn der Alltag Pause macht, beginnt die gemeinsame Runde. BedTimeBattalion ist für alle, die nach Feierabend lieber zusammen als allein spielen.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Zu unserem Discord <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#voice-live">Erst mal reinschauen <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-meta" aria-label="Über den Clan">
+          <span><i class="meta-dot"></i> DACH-Community</span>
+          <span>Zusammen nach Feierabend</span>
+        </div>
       </div>
-      <div class="hero-card"><img class="hero-logo" src="assets/btb-logo-transparent.png" alt="BedTimeBattalion Logo"></div>
+
+      <div class="hero-art" role="img" aria-label="BedTimeBattalion-Clanlogo">
+        <div class="art-ring art-ring-outer"></div>
+        <div class="art-ring art-ring-inner"></div>
+        <span class="art-coordinate art-coordinate-top">BTB / 01</span>
+        <img src="assets/btb-logo-transparent.png" alt="BedTimeBattalion Logo">
+        <span class="art-caption">BEDTIME<br>BATTALION</span>
+        <span class="art-coordinate art-coordinate-bottom">GEMEINSAM STATT SOLO</span>
+      </div>
+      <span class="hero-index" aria-hidden="true">01 — BTB</span>
     </section>
 
-    <section class="section" id="about">
-      <div class="section-heading"><p class="eyebrow">WER WIR SIND</p><h2>Gaming beginnt nach dem Gute-Nacht-Kuss.</h2></div>
-      <div class="grid cards">
-        <article class="card"><span class="card-number">01</span><h3>Elternfreundlich</h3><p>Bei uns versteht jeder, wenn das echte Leben zuerst kommt. Kinder, Familie und Alltag haben Vorrang.</p></article>
-        <article class="card"><span class="card-number">02</span><h3>Abends aktiv</h3><p>Unsere Hauptzeit ist am Abend. Genau dann, wenn zu Hause langsam Ruhe einkehrt.</p></article>
-        <article class="card"><span class="card-number">03</span><h3>Gemeinsam statt alleine</h3><p>Squads, Sprachchat, Taktik und lockere Runden – wir spielen zusammen und helfen einander.</p></article>
+    <section class="about section-wrap" id="about">
+      <div class="section-intro">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Worum es uns geht</p>
+        <h2>Gutes Teamplay.<br><span>Gutes Gefühl.</span></h2>
+        <p>Ein Clan muss nicht kompliziert sein. Für uns zählen ein guter Umgang, gemeinsame Runden und die Freiheit, das echte Leben an erste Stelle zu setzen.</p>
+      </div>
+      <div class="values">
+        <article class="value-card">
+          <span class="value-number">01</span>
+          <div class="value-icon" aria-hidden="true">↗</div>
+          <h3>Alltag zuerst</h3>
+          <p>Familie, Arbeit und alles, was sonst ansteht, gehen vor. Hier muss sich niemand für eine Pause erklären.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-number">02</span>
+          <div class="value-icon" aria-hidden="true">⌁</div>
+          <h3>Zusammen spielen</h3>
+          <p>Ob lockere Runde oder abgestimmtes Teamplay – am schönsten ist es, wenn man sich aufeinander verlassen kann.</p>
+        </article>
+        <article class="value-card">
+          <span class="value-number">03</span>
+          <div class="value-icon" aria-hidden="true">◷</div>
+          <h3>Feierabend im Voice</h3>
+          <p>Der Sprachchat ist unser Treffpunkt. Schau live nach, wo gerade gespielt und gequatscht wird.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section voice-section" id="voice-live">
-      <div class="section-heading voice-heading">
-        <div><p class="eyebrow">VOICE LIVE</p><h2>Welche Sprachkanäle sind aktiv?</h2></div>
-        <div class="live-badge"><span></span> LIVE</div>
+    <section class="voice-section" id="voice-live">
+      <div class="voice-inner">
+        <div class="voice-topline">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Direkt aus unserem Discord</p>
+            <h2>Wer ist gerade<br><span>im Voice?</span></h2>
+          </div>
+          <div class="live-badge" id="voice-connection" data-state="loading" aria-live="polite">
+            <span class="live-dot"></span>
+            <span id="voice-connection-label">VERBINDET</span>
+          </div>
+        </div>
+        <div class="voice-content">
+          <div class="voice-description">
+            <p>Aktive Sprachkanäle und die Leute darin – automatisch aktualisiert, ganz ohne Discord-Widget.</p>
+            <a class="text-link" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Komm dazu <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="voice-main">
+            <div id="voice-status" class="voice-status" aria-live="polite">
+              <div class="voice-loading"><span class="loading-mark"></span> Voice-Daten werden geladen …</div>
+            </div>
+            <div class="voice-footer">
+              <span id="voice-updated">Verbindung wird hergestellt</span>
+              <span>Aktualisierung alle 30 Sekunden</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="voice-intro">Hier siehst du die aktiven Sprachkanäle und wer gerade darin ist.</p>
-      <div id="voice-status" class="voice-status" aria-live="polite"><div class="voice-loading">Discord-Voice wird geladen …</div></div>
-      <div class="voice-footer"><span id="voice-updated">Live-Daten werden abgerufen</span><a href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Auf Discord dazukommen →</a></div>
     </section>
 
-    <section class="section" id="rules">
-      <div class="section-heading"><p class="eyebrow">UNSER CLAN</p><h2>Ein Tag. Eine Einheit.</h2></div>
-      <div class="clan-panel"><div><span class="clan-tag">[BTB]</span><h3>BedTimeBattalion</h3><p>Unser gemeinsames Clan-Tag gehört zu uns – auf Discord und ingame. Respektvoller Umgang, Teamplay und eine entspannte Atmosphäre stehen im Mittelpunkt.</p></div><a class="button secondary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Mitspielen</a></div>
+    <section class="join-section">
+      <div class="join-mark" aria-hidden="true">[BTB]</div>
+      <div class="join-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Dein Platz ist noch frei</p>
+        <h2>Mach den<br>Feierabend <span>gemeinsam.</span></h2>
+      </div>
+      <div class="join-action">
+        <p>Du suchst entspannte Leute für die nächste Runde? Dann lern uns auf Discord kennen.</p>
+        <a class="button button-primary" href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">BTB auf Discord <span aria-hidden="true">↗</span></a>
+      </div>
     </section>
   </main>
-  <footer><span>© <span id="year"></span> BedTimeBattalion [BTB]</span><span>Wardogs · DACH</span></footer>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#home">[BTB] BedTimeBattalion</a>
+    <span>Wardogs · DACH</span>
+    <a href="https://discord.gg/bexPqkztEA" target="_blank" rel="noopener noreferrer">Discord öffnen ↗</a>
+    <span>© <span id="year"></span> BTB</span>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

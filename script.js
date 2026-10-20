@@ -2,6 +2,8 @@ const VOICE_API_URL = 'https://btb-voice-api.tail890b5a.ts.net/api/voice';
 
 const statusEl = document.getElementById('voice-status');
 const updatedEl = document.getElementById('voice-updated');
+const connectionEl = document.getElementById('voice-connection');
+const connectionLabelEl = document.getElementById('voice-connection-label');
 const yearEl = document.getElementById('year');
 
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -44,6 +46,11 @@ function renderVoice(data) {
   }).join('');
 }
 
+function setConnectionState(state, label) {
+  if (connectionEl) connectionEl.dataset.state = state;
+  if (connectionLabelEl) connectionLabelEl.textContent = label;
+}
+
 async function loadDiscordVoice() {
   try {
     const response = await fetch(VOICE_API_URL, { cache: 'no-store' });
@@ -54,6 +61,7 @@ async function loadDiscordVoice() {
       throw new Error('Ungültige Antwort der Voice-API');
     }
     renderVoice(data);
+    setConnectionState('live', 'LIVE');
 
     if (updatedEl) {
       updatedEl.textContent = `Zuletzt aktualisiert: ${new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
@@ -64,6 +72,7 @@ async function loadDiscordVoice() {
         <strong>Voice-Liveanzeige momentan nicht verfügbar.</strong><br>
         Die Verbindung zur Bot-Voice-API ist momentan nicht verfügbar.
       </div>`;
+    setConnectionState('error', 'OFFLINE');
     if (updatedEl) updatedEl.textContent = 'Bot-Liveverbindung nicht verfügbar';
     console.error(error);
   }
